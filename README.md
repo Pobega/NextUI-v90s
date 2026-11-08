@@ -1,3 +1,27 @@
+# NextUI-v90s (Powkiddy V90S Port)
+
+> [!IMPORTANT]
+> **Provided As-Is:** `NextUI-v90s` and [`BaseOS-v90s`](https://github.com/Pobega/BaseOS-v90s) are provided **as-is**. They are **not** intended to be fully maintained forks of [NextUI](https://github.com/LoveRetro/NextUI) or [BaseOS](https://github.com/pvaibhav/BaseOS), but rather a standalone port meant to give Powkiddy V90S users a good experience. There may be bugs or missing features—feel free to report issues, though it is not extremely likely that all of them will be fixed.
+
+This repository contains the **Powkiddy V90S** (`v90s` / Allwinner A133P) port of [NextUI](https://github.com/LoveRetro/NextUI), designed to run on top of **[`BaseOS-v90s`](https://github.com/Pobega/BaseOS-v90s)** (~5.9s cold boot straight into NextUI).
+
+## Powkiddy V90S Installation (`BaseOS-v90s` + `NextUI-v90s`)
+
+1. **Flash `BaseOS-v90s` to TF1:**
+   Download `baseos-v90s-<version>.img.zip` from the [`BaseOS-v90s` Releases page](https://github.com/Pobega/BaseOS-v90s/releases), extract the `.img`, and flash it to your **TF1** microSD card. **Do not reformat TF1 after flashing.**
+2. **First Boot (Optional for Single-Card Setup):**
+   Boot the V90S once with TF1 inserted so `BaseOS-v90s` expands the `BASEOS` partition to fill the rest of your TF1 card, or mount the `BASEOS` partition directly on your computer.
+3. **Install `NextUI-v90s` (Single-Card or Dual-Card):**
+   Download `NextUI-*-v90s-*-base.zip` (or `NextUI-*-v90s-*-all.zip` to include extra emulator and tool paks) from the [`NextUI-v90s` Releases page](https://github.com/Pobega/NextUI-v90s/releases):
+   - **Single SD Card (TF1 only):** Extract the release archive (`MinUI.zip`, `*.pakz`, `Bios/`, `Roms/`, `Saves/`) onto the root of TF1's visible `BASEOS` partition. **Keep `MinUI.zip` and any `*.pakz` files zipped**—`BaseOS-v90s` unpacks and installs them automatically on boot.
+   - **Two SD Cards (TF1 + TF2):** Format a second microSD card (TF2) as **FAT32** or **exFAT** and extract the release archive (`MinUI.zip`, `*.pakz`, `Bios/`, `Roms/`, `Saves/`) to the root of TF2. When both cards are inserted, TF2 takes priority over TF1.
+4. **Boot & Play:**
+   Insert your card(s) into the V90S and power on. `BaseOS-v90s` will automatically install `MinUI.zip` and `*.pakz` on first boot and launch directly into NextUI.
+
+See [`docs/v90s-port/README.md`](docs/v90s-port/README.md) for V90S technical notes and hardware details.
+
+---
+
 <h1>This project is currently undergoing a license transition. See [#765](https://github.com/LoveRetro/NextUI/issues/765) for details.</h1>
 
 <div align="center">
@@ -77,6 +101,7 @@ For other devices we recommend checking out [MinUI](https://github.com/shauninma
 ---
 
 ## Currently supported devices:
+- Powkiddy V90S (via [`BaseOS-v90s`](https://github.com/Pobega/BaseOS-v90s) + [`NextUI-v90s`](https://github.com/Pobega/NextUI-v90s))
 - Trimui Brick
 - Trimui Smart Pro
 - Trimui Smart Pro S
